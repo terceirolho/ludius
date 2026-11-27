@@ -1,0 +1,17 @@
+# Configuração do Supabase local (usada pelo comando `supabase start`).
+# Só os itens que diferem do padrão estão aqui; o resto usa os valores padrão da CLI.
+project_id = "ludius"
+
+[db]
+# Mesma versão principal do Postgres usada no projeto na nuvem.
+major_version = 17
+
+[auth]
+# Endereço do app para links de confirmação de e-mail (ajustar quando houver deep link).
+site_url = "http://127.0.0.1:3000"
+# Senha com mínimo de 8 caracteres, como decidido na proposta.
+minimum_password_length = 8
+
+[auth.email]
+# O e-mail precisa ser confirmado antes de completar o perfil.
+enable_confirmations = true

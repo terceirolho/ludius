@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Desenho do ícone (área segura de 66 dp no centro de 108 dp). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Letra L -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,34h8v32h18v8h-26z" />
+    <!-- Ponto verde -->
+    <path
+        android:fillColor="#8CCF00"
+        android:pathData="M70,70m-4.5,0a4.5,4.5 0,1 1,9 0a4.5,4.5 0,1 1,-9 0" />
+</vector>

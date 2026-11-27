@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Manifesto: permissões e telas de entrada do app. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Única permissão por enquanto: acesso à internet para falar com o Supabase. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- allowBackup=false: dados do app não vão para backups do Google (LGPD). -->
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Ludius">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

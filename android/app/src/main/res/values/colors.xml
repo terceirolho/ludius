@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Cores usadas fora do Compose (ícone e fundo da janela). As do app ficam em Color.kt. -->
+<resources>
+    <color name="ludius_background">#F2F2F0</color>
+    <color name="ludius_ink">#151514</color>
+    <color name="ludius_lime">#8CCF00</color>
+</resources>

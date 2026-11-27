@@ -1,0 +1,34 @@
+# Verificação automática do banco de dados (Supabase).
+# Sobe um Supabase local completo, aplica todas as migrações do zero
+# e roda os testes pgTAP da pasta supabase/tests/.
+name: Banco de dados
+
+on:
+  push:
+    paths: ["supabase/**", ".github/workflows/database.yml"]
+  workflow_dispatch: # permite rodar manualmente na aba Actions
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      # Só os serviços necessários para testar o banco (mais rápido).
+      - name: Subir Supabase local
+        run: supabase db start
+
+      - name: Testes do banco
+        run: supabase test db
+
+      # Garante que o schema não tem erros comuns (funções quebradas, etc.).
+      - name: Verificar schema
+        run: supabase db lint --level error

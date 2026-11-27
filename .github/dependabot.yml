@@ -1,0 +1,15 @@
+# Avisa (com pull requests) quando houver versão nova das bibliotecas do app
+# e das ações do GitHub. Revise e aceite quando a verificação passar.
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: /android
+    schedule:
+      interval: monthly
+    groups:
+      android:
+        patterns: ["*"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

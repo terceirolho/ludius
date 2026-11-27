@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tema da janela Android (antes do Compose desenhar): só o fundo branco-gelo. -->
+<resources>
+    <style name="Theme.Ludius" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/ludius_background</item>
+    </style>
+</resources>

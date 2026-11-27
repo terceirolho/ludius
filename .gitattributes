@@ -1,0 +1,6 @@
+# Evita problemas de fim de linha entre Windows e Linux (WSL).
+* text=auto eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.ttf binary
+*.webp binary

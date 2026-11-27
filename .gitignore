@@ -1,0 +1,27 @@
+# Arquivos que NÃO vão para o GitHub.
+
+# Segredos e configurações da sua máquina (chaves do Supabase, caminho do Android SDK)
+local.properties
+.env
+.env.*
+*.keystore
+*.jks
+google-services.json
+
+# Gerados pelo Gradle / Android Studio
+.gradle/
+build/
+captures/
+.idea/
+*.iml
+.kotlin/
+.cxx/
+.externalNativeBuild/
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Sistema
+.DS_Store
+Thumbs.db
