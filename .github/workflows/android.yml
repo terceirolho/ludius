@@ -27,7 +27,7 @@ jobs:
           java-version: "17"
 
       # Guarda downloads do Gradle entre execuções para ficar mais rápido.
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
 
       - name: Testes, build e lint
         run: ./gradlew --no-daemon testDebugUnitTest :core:domain:test assembleDebug lintDebug
