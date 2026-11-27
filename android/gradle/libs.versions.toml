@@ -1,13 +1,13 @@
 # Catálogo de versões: todas as bibliotecas do app ficam listadas aqui, uma vez só.
 # Para atualizar uma biblioteca, troque a versão nesta lista.
 [versions]
-agp = "8.10.1"
-kotlin = "2.1.21"
+agp = "9.5.3"
+kotlin = "2.4.21"
 coreKtx = "1.16.0"
 lifecycle = "2.9.0"
 activityCompose = "1.10.1"
-composeBom = "2025.05.01"
-navigationCompose = "2.9.0"
+composeBom = "2026.11.01"
+navigationCompose = "2.10.2"
 junit = "4.13.2"
 
 [libraries]
