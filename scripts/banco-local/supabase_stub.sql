@@ -2,7 +2,7 @@
 -- Imitação mínima do Supabase para testar as migrações num Postgres comum.
 -- O que faz: cria os papéis (anon, authenticated, service_role), a tabela
 -- auth.users e a função auth.uid(), do mesmo jeito que o Supabase faz.
--- Uso: só pelo script run_local.sh. No Supabase de verdade isto já existe.
+-- Uso: só pelo script testar.sh. No Supabase de verdade isto já existe.
 -- =============================================================================
 do $$
 begin
@@ -22,7 +22,7 @@ grant usage on schema auth to anon, authenticated, service_role;
 grant usage on schema public to anon, authenticated, service_role;
 
 create table auth.users (
-  id uuid primary key default gen_random_uuid(),
+  id uuid primary key, -- igual ao Supabase: sem valor padrão
   email text,
   raw_user_meta_data jsonb default '{}'::jsonb,
   created_at timestamptz default now()

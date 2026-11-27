@@ -14,7 +14,8 @@ select is(
   'artista', 'perfil criado no cadastro com o tipo de conta');
 
 select throws_ok(
-  $$insert into auth.users (email, raw_user_meta_data) values ('x@teste.com', '{}')$$,
+  $$insert into auth.users (id, email, raw_user_meta_data)
+    values ('00000000-0000-0000-0000-0000000000ff', 'x@teste.com', '{}')$$,
   '23514', null, 'cadastro sem tipo de conta é recusado');
 
 insert into public.personal_data (user_id, first_name, last_name, birth_date, phone, tax_id)

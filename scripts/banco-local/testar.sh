@@ -2,15 +2,15 @@
 # Roda as migrações e os testes do banco num Postgres comum (sem Docker).
 # O que faz: recria o banco "ludius_test", aplica a imitação do Supabase,
 # todas as migrações e depois cada arquivo de teste pgTAP.
-# Uso: PGHOST=... PGUSER=... ./supabase/tests/local/run_local.sh
+# Uso: PGHOST=... PGUSER=... ./scripts/banco-local/testar.sh
 # O jeito oficial (com Docker) é: supabase start && supabase test db
 set -euo pipefail
 
-ROOT="$(cd "$(dirname "$0")/../../.." && pwd)"
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 DB="${TEST_DB:-ludius_test}"
 
 psql -v ON_ERROR_STOP=1 -q -d postgres -c "drop database if exists $DB" -c "create database $DB"
-psql -v ON_ERROR_STOP=1 -q -d "$DB" -f "$ROOT/supabase/tests/local/supabase_stub.sql"
+psql -v ON_ERROR_STOP=1 -q -d "$DB" -f "$ROOT/scripts/banco-local/supabase_stub.sql"
 psql -v ON_ERROR_STOP=1 -q -d "$DB" -c "create extension if not exists pgtap"
 
 for f in "$ROOT"/supabase/migrations/*.sql; do

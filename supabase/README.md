@@ -6,7 +6,6 @@ Banco de dados do Ludius (PostgreSQL no Supabase).
 |---|---|
 | `migrations/` | Cada arquivo muda o banco um passo; rodam em ordem de data |
 | `tests/database/` | Testes pgTAP: segurança, agenda, comissão, cancelamento |
-| `tests/local/` | Script para rodar os testes num Postgres comum, sem Docker |
 | `config.toml` | Configuração do Supabase local |
 
 ## Regras
@@ -27,3 +26,5 @@ supabase stop
 ```
 
 O GitHub também roda esses testes sozinho a cada pull request.
+
+Sem Docker, dá para testar num Postgres comum com pgTAP: `scripts/banco-local/testar.sh`.
